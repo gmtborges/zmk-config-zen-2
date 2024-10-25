@@ -26,18 +26,6 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
-
-        mod_tap_delay: mod_tap_delay {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MOD_TAP_DELAY";
-            bindings = <&mt>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            hold-trigger-key-positions = <13 14 15 16 19 20 21 22>;
-            quick-tap-ms = <125>;
-        };
     };
 
     keymap {
@@ -53,10 +41,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB        &kp Q                      &kp W           &kp E               &kp R             &kp T        &kp Y      &kp U                        &kp I                          &kp O                      &kp P              &kp BSPC
-&kp ESC        &mod_tap_delay LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_CONTROL D  &mt LEFT_SHIFT F  &kp G        &kp H      &mod_tap_delay LEFT_SHIFT J  &mod_tap_delay LEFT_CONTROL K  &mod_tap_delay LEFT_ALT L  &mt LEFT_GUI SEMI  &kp SINGLE_QUOTE
-&kp RIGHT_ALT  &kp Z                      &kp X           &kp C               &kp V             &kp B        &kp N      &kp M                        &kp COMMA                      &kp DOT                    &kp FSLH           &kp GRAVE
-                                                          &mo 1               &kp SPACE         &kp SPACE    &kp ENTER  &kp ENTER                    &mo 2
+&kp TAB        &kp Q           &kp W           &kp E               &kp R             &kp T        &kp Y      &kp U             &kp I               &kp O           &kp P              &kp BSPC
+&kp ESC        &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_CONTROL D  &mt LEFT_SHIFT F  &kp G        &kp H      &mt LEFT_SHIFT J  &mt LEFT_CONTROL K  &mt LEFT_ALT L  &mt LEFT_GUI SEMI  &kp SINGLE_QUOTE
+&kp RIGHT_ALT  &kp Z           &kp X           &kp C               &kp V             &kp B        &kp N      &kp M             &kp COMMA           &kp DOT         &kp FSLH           &kp GRAVE
+                                               &mo 1               &kp SPACE         &kp SPACE    &kp ENTER  &kp ENTER         &mo 2
             >;
         };
 
